@@ -36,7 +36,7 @@ func TestVideoServiceUpload(t *testing.T) {
 
 	videoUpload := services.NewVideoUpload()
 	videoUpload.OutputBucket = "codeflix_catalog_videos"
-	videoUpload.VideoPath = os.Getenv("localStoragePath") + "/" + video.ID
+	videoUpload.VideoPath = os.Getenv("LOCAL_STORAGE_PATH") + "/" + video.ID
 
 	doneUpload := make(chan string)
 	go videoUpload.ProcessUpload(50, doneUpload)
